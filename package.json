@@ -1,0 +1,45 @@
+{
+	"name": "discord-rpc-client",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "npx electron . --dev",
+		"build": "electron-builder --win --linux"
+	},
+	"keywords": [],
+	"author": "Metalloriff",
+	"license": "ISC",
+	"dependencies": {
+		"discord-rpc": "^4.0.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"sass": "^1.38.1",
+		"sucrase": "^3.20.3"
+	},
+	"devDependencies": {
+		"electron": "^16.0.2",
+		"electron-builder": "^22.14.5"
+	},
+	"build": {
+		"productName": "Discord RPC Client",
+		"artifactName": "DiscordRpcClient-${version}.${ext}",
+		"appId": "com.metalloriff.discordrpc",
+		"npmRebuild": false,
+		"files": [
+			"./src/index.js",
+			"./src/img/*",
+			"./src/frontend/dist/*",
+			"./src/frontend/dist/**/*"
+		],
+		"linux": {
+			"target": "AppImage",
+			"icon": "./src/img/icon.png"
+		},
+		"win": {
+			"target": "portable",
+			"icon": "./src/img/icon.png"
+		}
+	},
+	"homepage": "./"
+}

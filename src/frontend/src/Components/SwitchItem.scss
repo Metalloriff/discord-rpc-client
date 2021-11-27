@@ -1,0 +1,55 @@
+﻿@import "../Variables";
+
+.SwitchItem {
+	display: flex;
+
+	margin: 10px;
+	margin-left: 0;
+
+	.Title {
+		margin-right: 10px;
+		margin-top: 1px;
+	}
+
+	.Switch {
+		outline: none;
+		border: none;
+		-webkit-appearance: none;
+
+		position: relative;
+		cursor: pointer;
+
+		background-color: rgba(black, 0.25);
+
+		width: 40px;
+		height: 20px;
+		border-radius: 20px;
+
+		&:checked {
+			background-color: $primaryColor;
+
+			&:after {
+				transform: translateX(125%);
+			}
+		}
+
+		transition: background-color $ft;
+
+		&::after {
+			content: "";
+			display: block;
+
+			position: absolute;
+			top: 2px;
+			left: 2.5px;
+
+			width: 15px;
+			height: 15px;
+
+			background-color: white;
+			border-radius: 15px;
+
+			transition: transform $ft;
+		}
+	}
+}
